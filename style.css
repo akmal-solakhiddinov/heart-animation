@@ -81,3 +81,67 @@ p::after{
   100%{transform: rotate(360deg);
   }
 }
+
+.text-box{
+  position: absolute;
+  bottom: 10%;
+  overflow-x: hidden;
+  background: #000;
+  padding: 20px;
+}
+
+h2{
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: serif;
+  color: #fff;
+  position: relative;
+}
+
+h2::before, h2::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+h2::before{
+  background: #000;
+  animation: type 3s steps(25) 1s forwards infinite;
+  width: 100%;
+}
+
+span{
+  color: red;
+  font-weight: 900;
+  font-size: 2.2rem;
+}
+
+h2::after{
+  opacity: 1;
+  width: 2px;
+  background-color: #fff;
+  color: #fff;
+  animation: type 3s steps(15) 1s forwards infinite, blink 0.6s steps(5) infinite;
+}
+
+@keyframes type {
+
+  to{
+    left: 100%
+  }
+
+}
+
+@keyframes blink {
+
+  0%, 50%{
+    opacity: 0;
+  }
+
+  51%, 100%{
+    opacity: 1;
+  }
+
+}
